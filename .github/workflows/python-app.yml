@@ -5,9 +5,9 @@ name: Python application
 
 on:
   push:
-    branches: [ $default-branch ]
+    branches: [feature-001]
   pull_request:
-    branches: [ $default-branch ]
+    branches: [feature-001]
 
 jobs:
   build:
