@@ -25,14 +25,14 @@ jobs:
   test:
     name: 'Test Application'
     runs-on: ubuntu-latest
-      needs: [ build ]
-      steps:
-      - name: Test with pytest
-        run: |
-          pytest -m a test_square.py
+    needs: [ build ]
+    steps:
+    - name: Test with pytest
+      run: |
+        pytest -m a test_square.py
   deploy:
     runs-on: ubuntu-latest
-      steps:
-      - name: 'Deploy the build'
-        run: |
-          echo "Sucessfully build!"
+    steps:
+    - name: 'Deploy the build'
+      run: |
+        echo "Sucessfully build!"
