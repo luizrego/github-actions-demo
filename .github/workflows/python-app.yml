@@ -21,14 +21,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    test:
-      runs-on: ubuntu-latest
+  test:
+    runs-on: ubuntu-latest
       steps:
       - name: Test with pytest
         run: |
           pytest -m a test_square.py
-    deploy:
-      runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
       steps:
       - name: Deploy the build
         run: |
