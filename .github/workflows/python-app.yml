@@ -27,7 +27,7 @@ jobs:
       - name: Test with pytest
         run: |
           pytest -m a test_square.py
-      deploy:
+    deploy:
       runs-on: ubuntu-latest
       steps:
       - name: Deploy the build
