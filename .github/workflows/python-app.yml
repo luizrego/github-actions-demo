@@ -9,6 +9,7 @@ on:
 
 jobs:
   build:
+    name: 'Build Environment'
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -22,7 +23,9 @@ jobs:
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
   test:
+    name: 'Test Application'
     runs-on: ubuntu-latest
+      needs: [ build ]
       steps:
       - name: Test with pytest
         run: |
@@ -30,6 +33,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
       steps:
-      - name: Deploy the build
+      - name: 'Deploy the build'
         run: |
           echo "Sucessfully build!"
